@@ -1,0 +1,37 @@
+#
+# This contains the project requirements.
+#
+
+4 modes:
+    Simple Calculator
+    Programming Calculator
+    Base Unit Conversion
+    Quick Reference Tables
+
+Simple Calculator has the following functionality:
+    Basic arithmetic (add, subtract, multiply, divide)
+    Some error prevention:
+        Disallowing improper input such as characters
+
+Programming Calculator
+    Advanced calculator functionality:
+        Bitwise Operations
+        Modulus
+        Various Base Unit compatibility:
+            hex, octal, binary, decimal
+    Along with simple calculator functionality
+
+Base Unit Conversion
+    Be able to quickly and easily convert between:
+        hex, octal, binary, decimal
+
+Quick Reference Tables
+    ASCII Table
+    Number Conversion Table
+
+
+Only one mode may be active at any given time.
+
+Constraints:
+    UI as user-friendly and intuitive as possible.
+    Error prevention through simplicity and elegance.

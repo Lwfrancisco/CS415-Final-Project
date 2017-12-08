@@ -1,0 +1,37 @@
+#:kivy 1.8.0
+
+RootWidget:
+
+    BoxLayout:
+        orientation: 'vertical'
+        valign: 'middle'
+        halign: 'middle'
+        padding: 20
+        spacing: 20
+
+        ToggleButton:
+            text: "Simple"
+            size_hint: .15, .15
+
+            group: 'mode'
+            on_release:
+
+
+
+        ToggleButton:
+            text: "Programming"
+            size_hint: .15, .15
+
+            group: 'mode'
+
+        ToggleButton:
+            text: "   Number\nConversion"
+            size_hint: .15, .15
+
+            group: 'mode'
+
+        ToggleButton:
+            text: "Quick Reference"
+            size_hint: .15, .15
+
+            group: 'mode'
