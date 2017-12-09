@@ -7,3 +7,24 @@ StackLayout:
     Label:
         text: 'Base Unit Conversions'
         size_hint: 1, .15
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint: 1, .85
+
+        padding: 20
+        spacing: self.width * .33
+
+        Spinner:
+            text: "Decimal"
+            values: "Decimal", "Hexadecimal", "Octal", "Binary"
+
+            size_hint: .15, .25
+
+        Spinner:
+            text: "Decimal"
+            values: "Decimal", "Hexadecimal", "Octal", "Binary"
+
+            size_hint: .15, .25
+            pos_hint:
+
