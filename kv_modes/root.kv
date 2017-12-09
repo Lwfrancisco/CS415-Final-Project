@@ -13,17 +13,23 @@ RootWidget:
             text: "Simple"
             size_hint: .15, .25
 
+            on_release: app.screen_select('simple_calc')
+
             group: 'mode'
 
         ToggleButton:
             text: "Programming"
             size_hint: .15, .25
 
+            on_release: app.screen_select('program_calc')
+
             group: 'mode'
 
         ToggleButton:
             text: "   Number\nConversion"
             size_hint: .15, .25
+
+            on_release: app.screen_select('num_conversion')
 
             group: 'mode'
 
