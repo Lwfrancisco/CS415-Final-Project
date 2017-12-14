@@ -7,6 +7,7 @@ from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.widget import Widget
 
 import kivy
 
@@ -32,6 +33,15 @@ class RootWidget(BoxLayout):
     '''
 
     container = ObjectProperty(None)
+
+
+class NumConv(BoxLayout):
+
+    def num_conversion(self, input, output, data):
+        try:
+            self.display.text = data
+        except Exception:
+            self.display.text = "Error"
 
 
 class CalculatorApp(App):

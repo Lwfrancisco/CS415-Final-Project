@@ -1,36 +1,64 @@
 #:kivy 1.10.0
 
 
-StackLayout:
-    orientation: 'tb-lr'
+NumConv:
+    id: num_conv
 
-    Label:
-        text: 'Base Unit Conversions'
-        size_hint: 1, .15
+    display: output
 
-    # Where input is displayed
+    StackLayout:
+        orientation: 'tb-lr'
 
-    TextInput:
-        id: entry
-        font_size: 32
-        multiline: False
+        Label:
+            text: 'Base Unit Conversions'
+            size_hint: 1, .15
 
-    BoxLayout:
-        orientation: "horizontal"
-        size_hint: 1, .55
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, .85
+            padding: 20
 
-        padding: 20
-        spacing: self.width * .33
 
-        Spinner:
-            text: "Unit"
-            values: "Decimal", "Hexadecimal", "Octal", "Binary"
+            BoxLayout:
+                orientation: 'vertical'
 
-            size_hint: .15, .25
+                size_hint_x: .33
 
-        Spinner:
-            text: "Unit"
-            values: "Decimal", "Hexadecimal", "Octal", "Binary"
+                Spinner:
+                    id: input_spinner
+                    text: "Decimal"
+                    values: "Decimal", "Hexadecimal", "Octal", "Binary"
 
-            size_hint: .15, .25
+                    size_hint: 1, .5
 
+        # Where input is displayed
+
+                TextInput:
+                    id: entry
+                    font_size: 32
+                    multiline: False
+
+                    size_hint: 1, .5
+
+            BubbleButton:
+                text: "Convert"
+                on_release: root.num_conversion(input_spinner.text, output_spinner.text, entry.text)
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                size_hint_x: .33
+
+                Spinner:
+                    id: output_spinner
+                    text: "Decimal"
+                    values: "Decimal", "Hexadecimal", "Octal", "Binary"
+
+                    size_hint: 1, .5
+
+                Label:
+                    id: output
+                    font_size: 32
+                    size_hint: 1, .5
+
+                    text: 'Output'
