@@ -5,7 +5,7 @@
                     self.display.text = str(int(data))
                 elif output == 'Hexadecimal':
                     self.display.text = str(hex(int(data)))
-                elif output == 'octal':
+                elif output == 'Octal':
                     self.display.text = str(oct(int(data)))
                 elif output == 'Binary':
                     self.display.text = str(bin(int(data)))
