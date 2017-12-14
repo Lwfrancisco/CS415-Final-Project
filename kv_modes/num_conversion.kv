@@ -8,23 +8,29 @@ StackLayout:
         text: 'Base Unit Conversions'
         size_hint: 1, .15
 
+    # Where input is displayed
+
+    TextInput:
+        id: entry
+        font_size: 32
+        multiline: False
+
     BoxLayout:
         orientation: "horizontal"
-        size_hint: 1, .85
+        size_hint: 1, .55
 
         padding: 20
         spacing: self.width * .33
 
         Spinner:
-            text: "Decimal"
+            text: "Unit"
             values: "Decimal", "Hexadecimal", "Octal", "Binary"
 
             size_hint: .15, .25
 
         Spinner:
-            text: "Decimal"
+            text: "Unit"
             values: "Decimal", "Hexadecimal", "Octal", "Binary"
 
             size_hint: .15, .25
-            pos_hint:
 
