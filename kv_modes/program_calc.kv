@@ -5,10 +5,11 @@
 # class functions
 # Display points to the entry widget
 # CalcGridLayout automatically places the BoxLayout's evenly within the 5 rows.
-ProgrammingCalcGridLayout:
-    id: adv_calculator
+
+CalcGridLayout:
+    id: calculator
     display: entry
-    rows: 6
+    rows: 9
     padding: 20
     spacing: 20
 
@@ -20,10 +21,74 @@ ProgrammingCalcGridLayout:
 
     # Where input is displayed
     BoxLayout:
+        orientation: 'horizontal'
+
         TextInput:
             id: entry
-            font_size: 32
+            font_size: 24
             multiline: False
+
+
+    # When buttons are pressed update the entry
+    BoxLayout:
+        spacing: 10
+        Button:
+            text: "<"
+            on_press: entry.text += self.text
+        Button:
+            text: ">"
+            on_press: entry.text += self.text
+        Button:
+            text: "<<"
+            on_press: entry.text += self.text
+        Button:
+            text: ">>"
+            on_press: entry.text += self.text
+        Button:
+            text: "DEL"
+            on_press: entry.text = entry.text[:-1]
+
+
+
+    # When buttons are pressed update the entry
+    BoxLayout:
+        spacing: 10
+        Button:
+            text: "D"
+            on_press: entry.text += self.text
+        Button:
+            text: "E"
+            on_press: entry.text += self.text
+        Button:
+            text: "F"
+            on_press: entry.text += self.text
+        Button:
+            text: "%"
+            on_press: entry.text += self.text
+        Button:
+            text: "NOT"
+            on_press: entry.text += '!'
+
+
+    # When buttons are pressed update the entry
+    BoxLayout:
+        spacing: 10
+        Button:
+            text: "A"
+            on_press: entry.text += self.text
+        Button:
+            text: "B"
+            on_press: entry.text += self.text
+        Button:
+            text: "C"
+            on_press: entry.text += self.text
+        Button:
+            text: "+"
+            on_press: entry.text += self.text
+        Button:
+            text: "XOR"
+            on_press: entry.text += '^'
+
 
     # When buttons are pressed update the entry
     BoxLayout:
@@ -38,8 +103,11 @@ ProgrammingCalcGridLayout:
             text: "9"
             on_press: entry.text += self.text
         Button:
-            text: "+"
+            text: "-"
             on_press: entry.text += self.text
+        Button:
+            text: "AND"
+            on_press: entry.text += '&&'
 
     BoxLayout:
         spacing: 10
@@ -53,8 +121,11 @@ ProgrammingCalcGridLayout:
             text: "6"
             on_press: entry.text += self.text
         Button:
-            text: "-"
+            text: "*"
             on_press: entry.text += self.text
+        Button:
+            text: "OR"
+            on_press: entry.text += '||'
 
     BoxLayout:
         spacing: 10
@@ -68,7 +139,10 @@ ProgrammingCalcGridLayout:
             text: "3"
             on_press: entry.text += self.text
         Button:
-            text: "*"
+            text: "/"
+            on_press: entry.text += self.text
+        Button:
+            text: "~"
             on_press: entry.text += self.text
 
 	# Empties string containing numerical data when "AC" is pressed.
@@ -76,6 +150,7 @@ ProgrammingCalcGridLayout:
     # to the calculate function
     BoxLayout:
         spacing: 10
+        size_hint_y: 2
         Button:
             text: "AC"
             on_press: entry.text = ""
@@ -83,11 +158,10 @@ ProgrammingCalcGridLayout:
             text: "0"
             on_press: entry.text += self.text
         Button:
+            text: "."
+        Button:
             text: "="
             on_press:
                 print(entry.text + "=")
             	calculator.calculate(entry.text)
             	print(entry.text)
-        Button:
-            text: "/"
-            on_press: entry.text += self.text

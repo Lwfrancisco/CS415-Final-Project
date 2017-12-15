@@ -10,7 +10,8 @@ NumConv:
         orientation: 'tb-lr'
 
         Label:
-            text: 'Base Unit Conversions'
+            font_size: 48
+            text: 'Base Unit Conversion'
             size_hint: 1, .15
 
         BoxLayout:
@@ -26,6 +27,7 @@ NumConv:
 
                 Spinner:
                     id: input_spinner
+                    font_size: 18
                     text: "Decimal"
                     values: "Decimal", "Hexadecimal", "Octal", "Binary"
 
@@ -35,12 +37,13 @@ NumConv:
 
                 TextInput:
                     id: entry
-                    font_size: 32
+                    font_size: 24
                     multiline: False
 
                     size_hint: 1, .5
 
             BubbleButton:
+                font_size: 48
                 text: "Convert"
                 on_release: root.num_conversion(input_spinner.text, output_spinner.text, entry.text)
 
@@ -51,14 +54,15 @@ NumConv:
 
                 Spinner:
                     id: output_spinner
+                    font_size: 18
                     text: "Decimal"
                     values: "Decimal", "Hexadecimal", "Octal", "Binary"
 
                     size_hint: 1, .5
 
-                Label:
+                Button:
                     id: output
-                    font_size: 32
+                    font_size: 24
                     size_hint: 1, .5
 
                     text: 'Output'
